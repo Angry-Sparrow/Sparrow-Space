@@ -1,6 +1,7 @@
 ---
+path: "/docs/index"
 slug: "/docs/index"
-data: "2022-06-08"
+date: "2022-06-08"
 title: "docs first page"
 ---
 

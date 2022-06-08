@@ -1,10 +1,10 @@
 import type { GatsbyNode } from 'gatsby'
-const path = require('path')
+import path from 'path'
 
 export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql }) => {
     const { createPage } = actions
 
-    const docPostTemplate = require.resolve(`./src/templates/docTemplate.tsx`)
+    const docPostTemplate = path.resolve(`./src/templates/docTemplate.tsx`)
 
     return graphql(`
     {
@@ -26,7 +26,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql 
             return Promise.reject(result.errors)
         }
 
-        return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        return result.data.allMarkdownRemark.edges.forEach(({ node }: { node: any }) => {
             createPage({
                 path: node.frontmatter.slug,
                 component: docPostTemplate,

@@ -4,7 +4,7 @@ import path from 'path'
 export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql }) => {
     const { createPage } = actions
 
-    const docPostTemplate = path.resolve(`./src/templates/docTemplate.tsx`)
+    const docPostTemplate = path.resolve(`src/templates/docTemplate.tsx`)
 
     return graphql(`
     {

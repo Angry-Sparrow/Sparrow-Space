@@ -90,8 +90,8 @@ class Dancer {
       }
     }
 
-    const modelFile = 'models/miku_v2.pmd'
-    const vmdFiles = ['models/wavefile_v2.vmd']
+    const modelFile = '/models/miku_v2.pmd'
+    const vmdFiles = ['/models/wavefile_v2.vmd']
 
     this.helper = new MMDAnimationHelper({
       afterglow: 2.0,

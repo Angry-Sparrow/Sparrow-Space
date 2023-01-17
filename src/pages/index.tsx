@@ -1,6 +1,7 @@
 import * as React from 'react'
-import Dancer from '../addons/Dancer/controller'
 import './index.css'
+
+const isBrowser = typeof window !== "undefined"
 
 // styles
 const pageStyles = {
@@ -59,7 +60,10 @@ const links = [
 // markup
 const IndexPage = () => {
   React.useEffect(() => {
-    new Dancer()
+    if (!isBrowser) return
+    import('../addons/Dancer/controller').then((Dancer) => {
+      new Dancer.default()
+    })
   }, [])
 
   return (

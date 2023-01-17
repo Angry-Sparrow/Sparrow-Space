@@ -1,7 +1,7 @@
 import * as React from 'react'
 import './index.css'
 
-const isBrowser = typeof window !== "undefined"
+const isBrowser = typeof window !== 'undefined'
 
 // styles
 const pageStyles = {

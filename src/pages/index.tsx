@@ -5,9 +5,33 @@ const isBrowser = typeof window !== 'undefined'
 
 // styles
 const pageStyles = {
+  height: '100vh',
+  boxSizing: 'border-box' as const,
   color: '#232129',
   padding: 96,
-  fontFamily: '-apple-system, Roboto, sans-serif, serif',
+  fontFamily: 'Biotif-Regular, Helvetica Neue, Helvetica, Arial, sans-serif, -apple-system, Roboto, sans-serif, serif',
+}
+const headerStyles = {
+  position: 'fixed' as const,
+  top: 0,
+  left: 0,
+  height: 60,
+  width: '100%',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  background: 'linear-gradient(rgba(230, 100, 101, 0.3), rgba(235, 248, 225, 0.3), rgba(145, 152, 229, 0.3))',
+  zIndex: 1,
+}
+const navStyles = {
+  padding: 32,
+  maxWidth: 1125,
+  cursor: 'pointer',
+}
+const sectionStyles = {
+  // marginTop: 60,
+  width: '100%',
+  height: '100%',
 }
 
 // data
@@ -59,16 +83,33 @@ const links = [
 
 // markup
 const IndexPage = () => {
+  const dancerRef = React.createRef<HTMLDivElement>()
+
   React.useEffect(() => {
     if (!isBrowser) return
+    if (!dancerRef.current) return
     import('../addons/Dancer/controller').then((Dancer) => {
       new Dancer.default()
     })
-  }, [])
+  }, [dancerRef])
 
   return (
     <main style={pageStyles}>
       <title>Home Page</title>
+      <header style={headerStyles}>
+        <nav style={navStyles}>
+          <span className="nav__item">Home</span>
+        </nav>
+      </header>
+      <section style={sectionStyles}>
+        <div className="title-page__container">
+          <div className="title-page__intro">
+            <div>{`Hi. I'm Angry-Sparrow.`}</div>
+            <div>A front-end developer.</div>
+          </div>
+          <div ref={dancerRef} id="dancer" className="title-page__showtime"></div>
+        </div>
+      </section>
     </main>
   )
 }

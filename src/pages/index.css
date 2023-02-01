@@ -4,4 +4,35 @@ body {
 
 #___gatsby {
     position: absolute;
+    width: 100%;
+}
+
+.nav__item {
+    color: rgba(63, 135, 166, 0.6);
+}
+.nav__item:hover {
+    color: rgba(63, 135, 166, 1);
+}
+
+.title-page__container {
+    width: 100%;
+    height: 100%;
+    max-width: 1125px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-page__intro {
+    width: 50%;
+    font-size: 36px;
+}
+
+#dancer,.title-page__showtime {
+    margin: 24px;
+    width: 50%;
+    height: 60%;
+    box-sizing: border-box;
+    border-radius: 12px;
+    overflow: hidden;
 }

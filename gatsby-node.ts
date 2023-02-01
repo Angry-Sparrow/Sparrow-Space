@@ -19,7 +19,7 @@ exports.onCreateWebpackConfig = ({
   }
 
   if (stage === 'build-html' || stage === 'develop-html') {
-    Object.assign(config,{
+    Object.assign(config, {
       module: {
         rules: [
           {

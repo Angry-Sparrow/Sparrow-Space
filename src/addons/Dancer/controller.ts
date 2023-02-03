@@ -61,7 +61,7 @@ class Dancer {
     renderNode.appendChild(container)
 
     // camera
-    this.camera.position.z = 30
+    this.camera.position.z = 50
 
     // scene
     this.scene.background = new THREE.Color(0xffffff)
@@ -83,7 +83,7 @@ class Dancer {
     container.appendChild(this.renderer.domElement)
 
     // STATS
-    container.appendChild(this.stats.dom)
+    renderNode.appendChild(this.stats.dom)
 
     // model
     function onProgress(xhr: { lengthComputable: any; loaded: number; total: number }) {

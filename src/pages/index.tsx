@@ -20,7 +20,8 @@ const headerStyles = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  background: 'linear-gradient(rgba(230, 100, 101, 0.3), rgba(235, 248, 225, 0.3), rgba(145, 152, 229, 0.3))',
+  boxShadow: 'rgb(38, 57, 77) 0px 20px 30px -10px',
+  background: 'linear-gradient(to right, #5f2c82, #49a09d)',
   zIndex: 1,
 }
 const navStyles = {

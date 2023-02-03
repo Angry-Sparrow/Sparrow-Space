@@ -53,12 +53,15 @@ class Dancer {
     const container = document.createElement('div')
     container.classList.add('dancer__Container')
     Object.assign(container.style, {
-      position: 'absolute',
+      width: '100%',
+      height: '100%',
     })
-    document.body.appendChild(container)
+
+    const renderNode = document.getElementById('dancer') ?? document.body
+    renderNode.appendChild(container)
 
     // camera
-    this.camera.position.z = 30
+    this.camera.position.z = 50
 
     // scene
     this.scene.background = new THREE.Color(0xffffff)
@@ -76,11 +79,11 @@ class Dancer {
 
     // renderer
     this.renderer.setPixelRatio(window.devicePixelRatio)
-    this.renderer.setSize(window.innerWidth, window.innerHeight)
+    this.renderer.setSize(renderNode.clientWidth, renderNode.clientHeight)
     container.appendChild(this.renderer.domElement)
 
     // STATS
-    container.appendChild(this.stats.dom)
+    renderNode.appendChild(this.stats.dom)
 
     // model
     function onProgress(xhr: { lengthComputable: any; loaded: number; total: number }) {

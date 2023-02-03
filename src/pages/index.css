@@ -1,7 +1,41 @@
 body {
     margin: 0;
+    background-color: rgba(0, 0, 0, .9);
 }
 
 #___gatsby {
     position: absolute;
+    width: 100%;
+}
+
+.nav__item {
+    color: rgba(255, 255, 255, 0.6);
+}
+.nav__item:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.title-page__container {
+    width: 100%;
+    height: 100%;
+    max-width: 1125px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-page__intro {
+    width: 50%;
+    color: white;
+    text-shadow: #5f2c82 0px 10px 15px -5px;
+    font-size: 36px;
+}
+
+#dancer,.title-page__showtime {
+    margin: 24px;
+    width: 50%;
+    height: 60%;
+    box-sizing: border-box;
+    border-radius: 12px;
+    overflow: hidden;
 }
